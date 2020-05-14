@@ -1,3 +1,7 @@
+name: Deploy to Amazon S3
+
+on: [push]
+
 jobs:
   deploy:
     name: Deploy to Amazon S3
