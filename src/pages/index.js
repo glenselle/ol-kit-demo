@@ -1,17 +1,16 @@
 import React from 'react'
 
-class App extends React.Component {
-  render () {
-    // these checks ensure an SSR build doesn't choke on window references
-    console.log('typeof window', typeof window !== 'undefined')
-    if (typeof window !== 'undefined') {
-      const Map = require('../Map')
+const Index = () => {
+  // these checks ensure an SSR build doesn't choke on window references
+  if (typeof window !== 'undefined') {
+    // this file must exist outside of the /pages dir otherwise Gatsby will
+    // compile the file and hit olproj logic which needs a window defined
+    const App = require('../App').default
 
-      return <Map />
-    } else {
-      return null
-    }
+    return <App />
+  } else {
+    return null
   }
 }
 
-export default App
+export default Index

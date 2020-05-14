@@ -1,10 +1,10 @@
 import React from 'react'
-import { Map as olKitMap, Popup, Controls, centerAndZoom } from '@bayer/ol-kit'
+import { Map, Popup, Controls, centerAndZoom } from '@bayer/ol-kit'
 
 import VectorLayer from 'ol/layer/vector'
 import VectorSource from 'ol/source/vector'
 
-class Map extends React.Component {
+class App extends React.Component {
   onMapInit = map => {
     const data = new VectorLayer({
       source: new VectorSource({
@@ -20,12 +20,12 @@ class Map extends React.Component {
 
   render () {
     return (
-      <olKitMap onMapInit={this.onMapInit}>
+      <Map onMapInit={this.onMapInit}>
         <Popup />
         <Controls />
-      </olKitMap>
+      </Map>
     )
   }
 }
 
-export default Map
+export default App
