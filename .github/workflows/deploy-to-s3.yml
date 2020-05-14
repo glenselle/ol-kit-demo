@@ -18,6 +18,10 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-2
 
+    - name: Install npm deps
+      run: |
+        npm install
+
     - name: Run the Gatsby deploy
       run: |
         npm run deploy
