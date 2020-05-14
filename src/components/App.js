@@ -1,8 +1,10 @@
 import React from 'react'
-import { Map, Popup, Controls, centerAndZoom } from '@bayer/ol-kit'
+import { Map, Popup, LayerPanel, Controls, centerAndZoom } from '@bayer/ol-kit'
 
 import VectorLayer from 'ol/layer/vector'
 import VectorSource from 'ol/source/vector'
+
+import "./app.css"
 
 class App extends React.Component {
   onMapInit = map => {
@@ -20,9 +22,10 @@ class App extends React.Component {
 
   render () {
     return (
-      <Map onMapInit={this.onMapInit}>
+      <Map onMapInit={this.onMapInit} fullScreen>
         <Popup />
-        <Controls />
+        <LayerPanel />
+        <Controls variation={'dark'} />
       </Map>
     )
   }
