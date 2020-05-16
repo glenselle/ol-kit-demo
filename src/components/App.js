@@ -1,33 +1,38 @@
 import React from 'react'
-import { Map, Popup, LayerPanel, Controls, centerAndZoom } from '@bayer/ol-kit'
-
-import VectorLayer from 'ol/layer/vector'
-import VectorSource from 'ol/source/vector'
+import { Map, LayerPanel, Controls, centerAndZoom, Popup } from '@bayer/ol-kit'
+import BasemapContainer from './BasemapContainer'
 
 import "./app.css"
 
 class App extends React.Component {
-  onMapInit = map => {
-    const data = new VectorLayer({
-      source: new VectorSource({
-        features: [/** get some data and have fun with it */]
-      })
-    })
-    // add the data to the map
-    map.addLayer(data)
+  constructor (props) {
+    super(props)
 
+    this.state = {
+      map: {}
+    }
+  }
+
+  onMapInit = map => {
+    this.setState({ map })
     // quickly take the map
     centerAndZoom(map, {x: 0, y: 0, zoom: 3})
   }
 
   render () {
-    return (
-      <Map onMapInit={this.onMapInit} fullScreen>
-        <Popup />
-        <LayerPanel />
-        <Controls variation={'dark'} />
-      </Map>
-    )
+    if (this.state.map) {
+      return (
+        <Map onMapInit={this.onMapInit} fullScreen>
+          <Popup />
+          <LayerPanel />
+          <Controls variation={'dark'} />
+          <BasemapContainer map={this.state.map} />
+        </Map>
+      )
+    } else {
+      return null
+    }
+    
   }
 }
 
