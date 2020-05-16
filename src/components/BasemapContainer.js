@@ -10,7 +10,7 @@ class BasemapContainer extends Component {
     super(props)
 
     this.BASEMAP_OPTIONS = [
-      <BasemapOpenStreetMap key='openStreetMap' layerTypeID={LAYER_TYPE_ID} map={props.map} />,
+      <BasemapOpenStreetMap key='osm' layerTypeID={LAYER_TYPE_ID} map={props.map} />,
       <BasemapStamenTerrain key='stamenTerrain' layerTypeID={LAYER_TYPE_ID} map={props.map} />,
       <BasemapStamenTonerDark key='stamenTonerDark' layerTypeID={LAYER_TYPE_ID} map={props.map} />,
       <BasemapStamenTonerLite key='stamenTonerLite' layerTypeID={LAYER_TYPE_ID} map={props.map} />,
