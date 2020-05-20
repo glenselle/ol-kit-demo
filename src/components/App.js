@@ -22,7 +22,7 @@ import "./app.css"
 class App extends React.Component {
   onMapInit = (map) => {
     var layer = new VectorLayer({
-      title: 'Diltz\'s House',
+      title: 'Diltz\' House',
       source: new olSourceVector({
         features: [new olFeature({ ['x marks the spot']: ['the lake house'], geometry: new olGeomPoint(olProj.fromLonLat([-89.940598,38.923107])) })]
       })
