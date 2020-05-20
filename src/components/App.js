@@ -11,7 +11,7 @@ import {
   VectorLayer,
   centerAndZoom
 } from '@bayer/ol-kit'
-import BorderStyleIcon from '@material-ui/icons/BorderStyle'
+import ColorizeIcon from '@material-ui/icons/Colorize'
 import olSourceVector from 'ol/source/vector'
 import olFeature from 'ol/feature'
 import olGeomPoint from 'ol/geom/point'
@@ -38,7 +38,7 @@ class App extends React.Component {
       <Map onMapInit={this.onMapInit} fullScreen>
         <Popup />
         <LayerPanel>
-          <LayerPanelPage tabIcon={<BorderStyleIcon />}>
+          <LayerPanelPage tabIcon={<ColorizeIcon />}>
             <LayerPanelContent style={{ padding: '0px' }}>
               <LayerStyler />
             </LayerPanelContent>
