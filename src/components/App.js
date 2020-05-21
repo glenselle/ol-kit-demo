@@ -39,7 +39,7 @@ class App extends React.Component {
         <Popup />
         <LayerPanel>
           <LayerPanelPage tabIcon={<PaletteIcon />}>
-            <LayerPanelContent style={{ padding: '0px' }}>
+            <LayerPanelContent style={{ padding: '0px', fontFamily: 'Roboto, Arial, sans-serif' }}>
               <LayerStyler />
             </LayerPanelContent>
           </LayerPanelPage>
