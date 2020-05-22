@@ -27,6 +27,7 @@ class App extends React.Component {
         features: [new olFeature({
           feature_type: ['the lake house'],
           title: 'the lake house',
+          name: 'the lake house',
           geometry: new olGeomPoint(olProj.fromLonLat([-89.940598,38.923107])) })]
       })
     })
