@@ -24,7 +24,10 @@ class App extends React.Component {
     var layer = new VectorLayer({
       title: 'Diltz\' House',
       source: new olSourceVector({
-        features: [new olFeature({ ['x marks the spot']: ['the lake house'], geometry: new olGeomPoint(olProj.fromLonLat([-89.940598,38.923107])) })]
+        features: [new olFeature({
+          feature_type: ['the lake house'],
+          title: 'the lake house',
+          geometry: new olGeomPoint(olProj.fromLonLat([-89.940598,38.923107])) })]
       })
     })
 
