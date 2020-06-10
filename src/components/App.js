@@ -21,20 +21,20 @@ import olProj from 'ol/proj'
 import "./app.css"
 
 class App extends React.Component {
-  onMapInit = (map) => {
-    // var layer = new VectorLayer({
-    //   title: 'Diltz\' House',
-    //   source: new olSourceVector({
-    //     features: [new olFeature({
-    //       feature_type: ['the lake house'],
-    //       title: 'the lake house',
-    //       name: 'the lake house',
-    //       geometry: new olGeomPoint(olProj.fromLonLat([-89.940598,38.923107])) })]
-    //   })
-    // })
-    //
-    // map.addLayer(layer)
-    //
+  onMapInit = async (map) => {
+    var layer = new VectorLayer({
+      title: 'Diltz\' House',
+      source: new olSourceVector({
+        features: [new olFeature({
+          feature_type: ['the lake house'],
+          title: 'the lake house',
+          name: 'the lake house',
+          geometry: new olGeomPoint(olProj.fromLonLat([-89.940598,38.923107])) })]
+      })
+    })
+
+    map.addLayer(layer)
+    
     // centerAndZoom(map, { x: -89.941642, y: 38.922929, zoom: 17.20 })
 
     const dataLayer = await loadDataLayer(map, 'https://data.nasa.gov/api/geospatial/7zbq-j77a?method=export&format=KML')
